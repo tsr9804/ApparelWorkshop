@@ -1,0 +1,416 @@
+/*START BACKGROUND*/
+body{
+
+	background-color: #F6F7F8;
+    font-family: 'Lato', sans-serif;
+}
+
+.banner-1{
+	position:absolute; 
+	left:0px; 
+	top:0px; 
+    width:100%; 
+}
+
+.wrapper {
+    margin-left:auto;
+    margin-right:auto;
+}
+/*END BACKGROUND*/
+
+
+
+/*START LIST BOX*/
+.list-container{
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;	
+}
+
+.push-down{
+	top:400px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+/*NAVTAB START*/
+.nav>li>a{
+	padding: 5px !important;
+	color: #FFFFFF;
+}
+
+.nav-justified>li>a{
+    padding: 14px !important;
+    color: #FFFFFF;
+    margin-bottom:0px !important;
+}
+
+.nav>li>a:hover{
+	color: #FF9E1D;
+}
+
+.nav>li{
+	background-color: #FFA840;
+}
+
+.tab-text{
+    font-size: 20px;
+}
+
+.tab-active{
+    background-color: #33A8CC !important;   
+}
+
+/*NAVTAB END*/
+
+/*PRODUCT LISTING START*/
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: 0px !important;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin: auto;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 20px 9px 0px 9px;
+    margin-bottom: 50px;
+}
+
+.img-thumb{
+    display: block;
+    max-width: 250px;
+    max-height: 275px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;   
+}
+
+.img-container{
+    height:275px;
+    overflow: hidden;
+    text-align: center; 
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+
+.btn{
+    font-size: 22px !important;
+    padding: 8px 20px !important;   
+}
+
+.font-gray{
+    color: #929292;
+}
+
+.details-btn-desktop{
+    position: absolute;
+    bottom: 0px;
+    left: 25.5%;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.details-btn-mobile{
+    position: absolute;
+    bottom: 0px;
+    left: 42%;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.details-btn:hover{
+     text-decoration: underline;
+}
+
+.details-dropdown{
+    padding-bottom:30px;
+    overflow: hidden;
+}
+
+.top-pad-30{
+    padding-top:30px;
+    /*padding-left: 30px;*/
+}
+
+.top-pad-70{
+    padding-top:80px;
+    /*padding-left: 30px;*/
+}
+
+.top-pad-60{
+    padding-top:60px;
+    /*padding-left: 30px;*/
+}
+
+.top-pad-80{
+    padding-top:95px;
+    /*padding-left: 30px;*/
+}
+
+.top-pad-90{
+    padding-top:90px;
+    /*padding-left: 30px;*/
+}
+
+.lead{
+    color: rgb(255, 0, 0);
+}
+
+.product-info{
+
+}
+/*PRODUCT LIST END*/
+
+/*END LIST BOX
+
+/*START OOTER*/
+.blue{
+	background-color: #33A8CC;
+}
+
+.short-pad{
+	padding: 40px !important;
+    margin-top: 5px;
+}
+
+.footer-logo{
+    display: block;
+}
+
+.social-link{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#footer .social-link.circle a {
+    border: 1px solid #222;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 60px;
+    text-align: center;
+}
+
+#footer .social-link a {
+    display: inline-block;
+    font-size: 35px;
+    color: #222;
+    margin: 14px;
+}
+    
+/*END FOOTER*/
+
+.affiliate-link{
+    color:#000;
+}
+
+.affiliate-link:hover{
+    text-decoration: none;
+    color: #FFF;
+}
+
+/*MOBILE NAV BAR*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1031;
+    top: 0;
+    left: 0;
+    background-color: #33A8CC;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.main-menu li {
+    
+    /*margin-left: 20px;*/
+    font-size: 18px;
+    padding: 12px;
+    min-width: 230px;
+    font-weight: 600;
+}
+
+
+.text-right {
+    text-align: right;
+}
+
+.closebtn {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    padding-right: 10px;
+}
+
+.main-menu li a {
+    color: #FFFFFF;                     /*side bar font*/
+    text-decoration: none;
+}
+
+.main-menu li a:active,
+.main-menu li a:hover,
+.main-menu li a.active{
+    color: #FFF;
+}
+
+.mobile-top-bar{
+    background-color: #33A8CC;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+}
+
+.push-icon{
+    font-size: 30px;
+    cursor: pointer;
+    margin: 10px;
+    color: #FFA840;   
+}
+
+.mobile-top-logo{
+    position: relative;
+    top: 7px;
+    vertical-align: inherit;
+}
+
+.glyphicon-menu-hamburger{
+    padding: 6px;
+    color: #fff;
+    text-shadow: -2px 2px #346392;
+    background-color: #FFA840;
+    border-radius: 7px;
+}
+
+.glyphicon-menu-hamburger:active,
+.glyphicon-menu-hamburger.active{
+    text-shadow: 2px -2px #346392; 
+}
+
+/*AFFILIATE PAGE START*/
+.single-body{
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.single-body p{
+    font-size: 15px;
+}
+
+.affiliate-title{
+    color: #555966;
+}
+/*AFFILIATE PAGE END*/
+
+/*MOBILE NAV BAR*/
+
+@media(min-width: 1420px){
+    .btn-right{
+        float: right;
+        
+    }
+
+    .list-group-item-heading{
+        width: 80%;
+    }
+
+    .img-container{
+        width: 300px;
+    }
+
+    .img-thumb{
+        max-width: 250px;
+    }
+
+    .slide-right{
+        float: right;
+    }
+}
+
+@media(max-width: 1000px){
+    .img-thumb{
+        max-width: 250px;
+    }   
+}
+
+@media(min-width: 1420px) {
+
+  .tablet-show{
+    display: none;
+  }
+}
+
+@media(max-width: 1420px) {
+  .tablet-hide{
+    display: none;
+  }
+
+}
+
+@media(max-width: 480px) {
+  .mobile-hide{
+    display: none;
+  }
+
+  .list-container{
+    margin-top: 60px;
+  }
+}
+
+@media(min-width: 480px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+
+  .mobile-show{
+    display: none;
+  }
+
+  .item.list-group-item{
+    margin-top:5px;
+  }
+}

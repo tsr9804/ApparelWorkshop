@@ -1,0 +1,204 @@
+<!DOCTYPE html> 
+<html>
+  
+    {% load static %}
+
+	<head>
+		<title>Apparel Resource</title> 
+  		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+      <script src="https://use.fontawesome.com/9c5f69aef7.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="{% static 'home/js/scripts.js' %}"></script>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-85168404-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+      <script src="{% static 'home/js/push-menu.js' %}"></script>
+ 	</head>
+	<!-- Start Body -->
+  <body ontouchstart="">
+    <div class='container-fluid'>
+  		<div class='row'> <!-- this is to make it responsive to your screen width-->
+        
+        <!-- Mobile nav bar start-->
+        <div id="mySidenav" class="sidenav">
+          <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a class='push-menu-item' href="{% url 'home_sewing' %}">Home Sewing</a>
+          <a class='push-menu-item' href="{% url 'industrial_sewing' %}">Industrial Sewing</a>
+          <a class='push-menu-item' href="{% url 'accessories' %}">Accessories</a>
+          <a class='push-menu-item' href="{% url 'materials' %}">Materials</a> -->
+          <ul class="list-unstyled main-menu">
+            <!--Include your navigation here-->
+            <li class="text-right"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a></li>
+            <li><a href="{% url 'home_sewing' %}">Home Sewing<span class="icon"></span></a></li>
+            <li><a href="{% url 'industrial_sewing' %}">Industrial Sewing<span class="icon"></span></a></li>
+            <li><a href="{% url 'accessories' %}">Accessories<span class="icon"></span></a></li>
+            <li><a href="{% url 'materials' %}">Materials<span class="icon"></span></a></li>
+          </ul>
+        </div>
+        <div class='mobile-top-bar mobile-show navbar-fixed-top'>
+          <span class='mobile-show push-icon glyphicon glyphicon-menu-hamburger' onclick="openNav()"></span>
+          <img src="{% static 'home/images/mobile_banner.png' %}" class="mobile-top-logo" style='width:250px; height:40px'>
+        </div>
+        <!-- Mobile nav bar end-->
+
+        <!-- Top Banner -->
+        <a href="{% url 'index' %}">
+        <img src="{% static 'home/images/air_banner_15.png' %}" class="img-responsive mobile-hide" style='width:100%'>
+        </a>
+        
+        <!--Start Listing Box-->
+        <!-- Desktop nav bar start -->
+        <div class='col-md-8 col-centered list-container'>
+    			<ul class='nav nav-justified mobile-hide'>
+            {% if product_cat == "Home Sewing Machine"%}
+              <li class='tab-text tab-active'><a href="{% url 'home_sewing' %}">Home Sewing</a></li>
+            {% else %}
+              <li class='tab-text'><a href="{% url 'home_sewing' %}">Home Sewing</a></li>
+            {% endif %} 
+
+            {% if product_cat == "Industrial Sewing Machine"%}
+              <li class='tab-text tab-active'><a href="{% url 'industrial_sewing' %}">Industrial Sewing</a></li>
+            {% else %}
+              <li class='tab-text'><a href="{% url 'industrial_sewing' %}">Industrial Sewing</a></li>
+            {% endif %} 
+
+            {% if product_cat == "Accessories"%}
+              <li class='tab-text tab-active'><a href="#{% url 'accessories' %}">Accessories</a></li>
+            {% else %}
+              <li class='tab-text'><a href="{% url 'accessories' %}">Accessories</a></li>
+            {% endif %} 
+
+            {% if product_cat == "Materials"%}
+              <li class='tab-text tab-active'><a href="{% url 'materials' %}">Materials</a></li>
+            {% else %}
+              <li class='tab-text'><a href="{% url 'materials' %}">Materials</a></li>
+            {% endif %}
+				  </ul>
+          <!-- Desktop nav bar end -->
+          
+          {% for product in product_list %}
+          <div class="item  col-xs-4 col-lg-4 list-group-item">
+            <div class="thumbnail">
+              
+              <div class='col-md-2 img-container tablet-hide'>
+                <img class="group list-group-image img-thumb" src="{{product.image}}">
+              </div>
+
+              <div class='col-md-4 img-container tablet-show'>
+                <img class="group list-group-image img-thumb" src="{{product.image}}">
+              </div>
+              
+              <div class="col-md-6 caption tablet-hide ">     
+                <h4 class="group inner list-group-item-heading top-pad-70">{{product.title}}</h4>
+                {% if product.price %}
+                  <p class="lead">${{product.price}}&nbsp;{{product.currency}}</p>
+                {% else %}
+                  <p class="lead">N/A</p>
+                {% endif %} 
+                <!--div class='slide-right'>
+                  <p class='font-gray'>(View on Amazon's site)</p>
+                </div-->
+                <!-- {% if product.editorial %}
+                  <span>{{product.editorial}}</span><br>
+                {% endif %} --> 
+              </div>
+
+              <div class="col-md-8 caption tablet-show ">     
+                <h4 class="group inner list-group-item-heading">{{product.title}}</h4>
+                {% if product.price %}
+                  <p class="lead">${{product.price}}&nbsp;{{product.currency}}</p>
+                {% else %}
+                  <p class="lead">N/A</p>
+                {% endif %} 
+                <!--div class='slide-right'>
+                  <p class='font-gray'>(View on Amazon's site)</p>
+                </div-->
+                <!-- {% if product.editorial %}
+                  <span>{{product.editorial}}</span><br>
+                {% endif %} --> 
+                <a class="btn btn-success" href="{{product.itemURL}}" style='margin: 5px;'>Learn More</a>
+                <p class='font-gray' style='padding-left: 20px;'>(on Amazon's site)</p>
+              </div>  
+
+              <div class="col-md-2 container top-pad-80 tablet-hide">    
+                <a class="btn btn-success" href="{{product.itemURL}}" style='margin: 5px;'>Learn More</a>
+                <p class='font-gray' style='padding-left: 15px'>(on Amazon's site)</p> 
+              </div>
+
+              <p class="font-gray details-btn-desktop">View Details</p>
+              <div class='container row details-dropdown' style='display:none'>
+                <div class='col-md-6'>
+                  <ul class="list-unstyled">
+                    <li><b>Features</b>
+                      <ul>
+                        {% if product.features %}
+                          {% for feature in product.features %}
+                            <li>{{feature}}</li>
+                          {% endfor %} <br>
+                        {% endif %}
+                      </ul>
+                    </li>
+                    <!-- <li><b>Editorial</b>
+                      <ul>
+                        {% if product.editorial %}
+                            <span>{{product.editorial}}</span><br>
+                        {% endif %}
+                      </ul>
+                    </li> -->
+                  </ul>
+                </div>
+                <div class='col-md-4 '>
+                  {% if product.brand %}
+                    <b>Brand:&nbsp;</b><span>{{product.brand}}</span><br>
+                  {% else %}
+                    <b>Brand:&nbsp;</b><span>N/A</span><br>
+                  {% endif %}
+
+                  {% if product.model %}
+                    <b>Model:&nbsp;</b><span>{{product.model}}</span><br>
+                  {% else %}
+                    <b>Model:&nbsp;</b><span>N/A</span><br>
+                  {% endif %}
+
+                  {% if product.manufacturer %}
+                    <b>Manufacturer:&nbsp;</b><span>{{product.manufacturer}}</span><br>
+                  {% else %}
+                    <b>Manufacturer:&nbsp;</b><span>N/A</span><br>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div> 
+    </div>
+	</body>
+  <!-- Body End -->
+  <!-- Footer Start -->
+  <footer id='footer' class='blue short-pad text-center'>
+    <div class='container-fluid'>
+      <div class ='row'>
+        <a href="" class="footer-logo">
+          <img class="img-responsive" style="margin: 0 auto;" src="{% static 'home/images/air_banner_footer.png' %}"></a>
+        <a href="{% url 'affiliatedisc' %}" class="affiliate-link">Affiliate Disclosure</a> 
+        <!--div class="social-link circle">
+          <a href=""><i class="fa fa-facebook"></i></a>
+          <a href=""><i class="fa fa-twitter"></i></a>
+          <a href=""><i class="fa fa-linkedin"></i></a-->  
+        </div>
+      </div>  
+    </div>
+  </footer>
+    <!-- Footer End -->
+</html>

@@ -1,0 +1,6 @@
+# only install locally since GAE has its own version
+#Riggs local
+
+MySQL-python==1.2.5
+python-amazon-simple-product-api==2.1.0
+jsonfield==1.0.3
